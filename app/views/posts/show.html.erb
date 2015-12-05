@@ -7,6 +7,9 @@
 <p>
   <%= @post.description %>
 </p>
+<p>
+  Auteur : <%= @post.user.name %>
+</p>
 
 <%= link_to 'Modifier', edit_post_path(@post) %>
 <%= link_to 'Supprimer', post_path(@post), method: :delete, data: { confirm: "Etes-vous sur ?" } %>
