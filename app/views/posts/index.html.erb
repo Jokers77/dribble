@@ -8,6 +8,11 @@
         <%= link_to post, class: "thumbnail" do %>
           <%= image_tag post.image.url, class: "img-responsive" %>
         <% end %>
+        <p>
+          <%= link_to @comment do %>
+            <%= post.comments.count %> Commentaires
+          <% end %>
+        </p>
     </div>
 <% end %>
 </div>

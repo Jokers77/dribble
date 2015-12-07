@@ -14,7 +14,30 @@
   Auteur : <%= @post.user.name %>
 </p>
 
-<%= link_to 'Modifier', edit_post_path(@post) %>
-<%= link_to 'Supprimer', post_path(@post), method: :delete, data: { confirm: "Etes-vous sur ?" } %>
+<div id="comment">
+  <h2 class="comment_count"><%= pluralize(@post.comments.count, "commentaire") %></h2>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p><%= comment.user.name %></p>
+          <p><%= comment.content %></p>
+        </div>
+      <% end %>
+</div>
+
+<hr>
+
+<% if current_user %>
+  <%= render 'comments/form' %>
+<% else %>
+  <p>
+    Veuillez-vous logger pour poster un commentaire.
+  </p>
+<% end %>
+<br>
+
+<% if current_user %>
+  <%= link_to 'Modifier', edit_post_path(@post) %>
+  <%= link_to 'Supprimer', post_path(@post), method: :delete, data: { confirm: "Etes-vous sur ?" } %>
+<% end %>
 <br>
 <%= link_to 'Accueil', root_path %>
