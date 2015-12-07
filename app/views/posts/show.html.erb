@@ -4,6 +4,12 @@
 <p>
   <%= image_tag @post.image.url %>
 </p>
+
+<%= link_to root_path do %>
+  <span class="glyphicon glyphicon-arrow-left"></span> Back
+<% end %>
+
+<hr>
 <p>
   <%= @post.link %>
 </p>
@@ -25,8 +31,8 @@
   <h3 class="comment_count"><%= pluralize(@post.comments.count, "commentaire") %></h3>
       <% @comments.each do |comment| %>
         <div class="comment">
-          <p><%= comment.user.name %></p>
-          <p><%= comment.content %></p>
+          <p><strong><%= comment.user.name %></strong></p>
+          <p class="comment-left"><%= comment.content %></p>
         </div>
       <% end %>
 </div>
@@ -47,4 +53,3 @@
   <%= link_to 'Supprimer', post_path(@post), method: :delete, data: { confirm: "Etes-vous sur ?" } %>
 <% end %>
 <br>
-<%= link_to 'Accueil', root_path %>
