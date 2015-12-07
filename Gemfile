@@ -15,6 +15,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'imagemagick-binaries', '~> 6.8', '>= 6.8.7.5.1'
 gem 'imagemagick-identify', '~> 0.0.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 

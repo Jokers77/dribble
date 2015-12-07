@@ -14,8 +14,15 @@
   Auteur : <%= @post.user.name %>
 </p>
 
+<p><%= @post.get_upvotes.size %> J'aimes</p>
+<p><%= @post.get_downvotes.size %> N'aime pas</p>
+
+
+<%= link_to "J'aime", like_post_path(@post), method: :get %>
+<%= link_to "Je n'aime pas", dislike_post_path(@post), method: :get %>
+
 <div id="comment">
-  <h2 class="comment_count"><%= pluralize(@post.comments.count, "commentaire") %></h2>
+  <h3 class="comment_count"><%= pluralize(@post.comments.count, "commentaire") %></h3>
       <% @comments.each do |comment| %>
         <div class="comment">
           <p><%= comment.user.name %></p>

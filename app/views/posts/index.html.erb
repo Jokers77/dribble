@@ -4,13 +4,17 @@
     </div>
 <% @posts.each do |post| %>
     <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <h2> <%= link_to post.title, post %></h2>
+      <h3> <%= link_to post.title, post %></h3>
         <%= link_to post, class: "thumbnail" do %>
           <%= image_tag post.image.url, class: "img-responsive" %>
         <% end %>
         <p>
           <%= link_to @comment do %>
             <%= post.comments.count %> Commentaires
+            <p>
+              <%= post.get_likes.size %>
+              Likes
+            </p>
           <% end %>
         </p>
     </div>
