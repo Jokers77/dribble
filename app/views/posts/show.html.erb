@@ -5,8 +5,13 @@
   <%= image_tag @post.image.url %>
 </p>
 
+<div class="vote-left">
+  <p><%= @post.get_upvotes.size %> J'aimes</p>
+  <p><%= @post.get_downvotes.size %> N'aime pas</p>
+</div>
+
 <%= link_to root_path do %>
-  <span class="glyphicon glyphicon-arrow-left"></span> Back
+  <span class="glyphicon glyphicon-arrow-left"></span> Retour
 <% end %>
 
 <hr>
@@ -19,9 +24,6 @@
 <p>
   Auteur : <%= @post.user.name %>
 </p>
-
-<p><%= @post.get_upvotes.size %> J'aimes</p>
-<p><%= @post.get_downvotes.size %> N'aime pas</p>
 
 
 <%= link_to "J'aime", like_post_path(@post), method: :get %>
