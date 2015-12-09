@@ -6,4 +6,17 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
+
+  validates :name, :email, :password_confirmation, presence: {
+    message: "Le champ doit être renseigné."
+  }
+
+  validates :name, uniqueness: {
+    message: "Ce name est déjà pris."
+  }
+
+  validates :email, uniqueness: {
+    message: "Cet email est déjà pris."
+  }
+
 end

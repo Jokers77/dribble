@@ -1,22 +1,22 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Les oeuvres</h1>
+        <h1 class="page-header animated bounceInLeft">Les oeuvres</h1>
     </div>
 <% @posts.each do |post| %>
-    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <h3> <%= link_to post.title, post %></h3>
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb animated bounce">
+      <h3><%= link_to post.title, post %></h3>
         <%= link_to post, class: "thumbnail" do %>
           <%= image_tag post.image.url, class: "img-responsive" %>
         <% end %>
         <p>
-          <%= link_to @comment do %>
+          <%= link_to post do %>
             <%= post.comments.count %> Commentaires
-            <p>
-              <%= post.get_likes.size %>
-              Likes
-            </p>
           <% end %>
         </p>
+            <p>
+              <%= post.get_likes.size %>
+              Like
+            </p>
     </div>
 <% end %>
 </div>
