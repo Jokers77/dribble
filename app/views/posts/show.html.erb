@@ -7,7 +7,9 @@
 
 <div class="vote-left col-lg-3 col-md-4 col-xs-6">
   <p><%= @post.get_upvotes.size %> J'aime</p>
+  <a href="#download"><span class="glyphicon glyphicon-thumbs-up"></span></a>
   <p><%= @post.get_downvotes.size %> N'aime pas</p>
+  <a href="#download"><span class="glyphicon glyphicon-thumbs-down"></span></a>
 </div>
 
 <%= link_to root_path do %>
@@ -16,7 +18,7 @@
 
 <hr>
 <p>
-  <%= @post.link %>
+  Site : <%= @post.link %>
 </p>
 <p>
   <%= @post.description %>

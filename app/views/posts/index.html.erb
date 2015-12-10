@@ -8,15 +8,19 @@
         <%= link_to post, class: "thumbnail" do %>
           <%= image_tag post.image.url, class: "img-responsive" %>
         <% end %>
+        <div class="panel-footer text-center">
+            <%= post.get_likes.size %>  J'aime
+            <a href="#download"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+            -
+            <%= post.get_dislikes.size %>  N'aime pas
+            <a href="#download"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+        </div>
+        <br>
         <p>
           <%= link_to post do %>
             <%= post.comments.count %> Commentaires
           <% end %>
         </p>
-            <p>
-              <%= post.get_likes.size %>
-              Like
-            </p>
     </div>
 <% end %>
 </div>
