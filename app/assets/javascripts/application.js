@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+
+(function($){
+
+  var form = $('.hover');
+  TweenLite.to(form, 1.5, {width:600});
+
+
+})(jQuery);

@@ -2,14 +2,18 @@
   <%= @post.title %>
 </h1>
 <p>
-  <%= image_tag @post.image.url, class: "animated flip img-responsive col-lg-3 col-md-4 col-xs-6" %>
+  <%= image_tag @post.image.url, class: "animated zoomIn img-responsive col-lg-3 col-md-4 col-xs-6" %>
 </p>
 
 <div class="vote-left col-lg-3 col-md-4 col-xs-6">
   <p><%= @post.get_upvotes.size %> J'aime</p>
-  <a href="#download"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+  <%= link_to like_post_path(@post), method: :get do %>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  <% end %>
   <p><%= @post.get_downvotes.size %> N'aime pas</p>
-  <a href="#download"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+  <%= link_to dislike_post_path(@post), method: :get do %>
+    <span class="glyphicon glyphicon-thumbs-down"></span>
+  <% end %>
 </div>
 
 <%= link_to root_path do %>
@@ -27,9 +31,6 @@
   Auteur : <%= @post.user.name %>
 </p>
 
-
-<%= link_to "J'aime", like_post_path(@post), method: :get %>
-<%= link_to "Je n'aime pas", dislike_post_path(@post), method: :get %>
 
 <div id="comment">
   <h3 class="comment_count"><%= pluralize(@post.comments.count, "commentaire") %></h3>
