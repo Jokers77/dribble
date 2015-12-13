@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     message: "Le champ doit être renseigné."
   }
 
+  validates :name, length: { :minimum => 4, message: "4 characters minimum" }
+
   validates :name, uniqueness: {
     message: "Ce name est déjà pris."
   }

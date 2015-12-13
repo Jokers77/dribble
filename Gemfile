@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+gem 'sqlite3'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -22,6 +17,7 @@ gem 'imagemagick-identify', '~> 0.0.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'animate.css-rails', '~> 3.2'
+gem 'aws-sdk', '~> 2.2', '>= 2.2.5'
 
 
 

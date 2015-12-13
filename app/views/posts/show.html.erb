@@ -2,7 +2,7 @@
   <%= @post.title %>
 </h1>
 <p>
-  <%= image_tag @post.image.url, class: "animated zoomIn img-responsive col-lg-3 col-md-4 col-xs-6" %>
+  <%= image_tag @post.image.url(:medium) %>
 </p>
 
 <div class="vote-left col-lg-3 col-md-4 col-xs-6">
