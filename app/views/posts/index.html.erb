@@ -6,7 +6,7 @@
     <div class="col-lg-3 col-md-4 col-xs-6 thumb animated bounce">
       <h3><%= link_to post.title, post %></h3>
         <%= link_to post, class: "thumbnail" do %>
-          <%= image_tag post.image.url, class: "img-responsive" %>
+          <%= image_tag post.image.url, class: "img-responsive hvr-grow" %>
         <% end %>
         <div class="panel-footer text-center">
             <%= post.get_likes.size %>  J'aime
@@ -14,17 +14,22 @@
             -
             <%= post.get_dislikes.size %>  N'aime pas
             <span class="glyphicon glyphicon-thumbs-down"></span>
+            <p>
+            <%= link_to post, class: "link-comment" do %>
+              <%= post.comments.count %> Commentaires
+            <% end %>
+            </p>
         </div>
+
         <br>
-        <p>
-          <%= link_to post do %>
-            <%= post.comments.count %> Commentaires
-          <% end %>
-        </p>
+
     </div>
 <% end %>
+
 </div>
 
+<%= paginate @posts %>
+
 <% if current_user %>
-  <%= link_to "Ajouter", new_post_path, { class: "btn btn-primary" } %>
+  <%= link_to "Ajouter une oeuvre", new_post_path, { class: "btn btn-primary" } %>
 <% end %>

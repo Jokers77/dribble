@@ -9,5 +9,6 @@ class Post < ActiveRecord::Base
     message: "Ce champ doit être renseigné."
   }
 
+  paginates_per 2
 
 end

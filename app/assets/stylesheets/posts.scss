@@ -21,7 +21,7 @@ a.thumbnail {
 }
 .panel-image img.panel-image-preview {
     width: 100%;
-	border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
 }
 
 .panel-image label {
@@ -38,7 +38,7 @@ a.thumbnail {
 }
 
 .panel-body {
-   overflow: hidden;
+ overflow: hidden;
 }
 
 .panel-image ~ input[type=checkbox] {
@@ -54,11 +54,15 @@ a.thumbnail {
 
 .panel-image ~ input[type=checkbox]:checked ~ .panel-body {
     height: auto;
-	padding: 15px;
+    padding: 15px;
 }
 
 .panel-image ~ .panel-footer a {
     padding: 0px 10px;
-	font-size: 1.3em;
-	color: rgb(100, 100, 100);
+    font-size: 1.3em;
+    color: rgb(100, 100, 100);
+}
+
+.link-comment {
+    color: black;
 }

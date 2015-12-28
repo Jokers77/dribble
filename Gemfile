@@ -18,13 +18,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'animate.css-rails', '~> 3.2'
 gem 'aws-sdk', '~> 2.2', '>= 2.2.5'
-
-
-
-
-
-
-
+gem 'kaminari', '~> 0.16.3'
 
 
 group :development, :test do

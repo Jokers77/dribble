@@ -19,8 +19,12 @@
 
 (function($){
 
-  var form = $('.hover');
-  TweenLite.to(form, 1.5, {width:600});
+
+
+  $(".nav a").on("click", function(){
+    $(".nav li").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
+  });
 
 
 })(jQuery);
