@@ -29,7 +29,8 @@
 </div>
 
 <%= paginate @posts %>
+<br>
 
 <% if current_user %>
-  <%= link_to "Ajouter une oeuvre", new_post_path, { class: "btn btn-primary" } %>
+  <%= link_to "Ajouter une oeuvre", new_post_path, { class: "btn-oeuvre hvr-shutter-in-horizontal" } %>
 <% end %>
