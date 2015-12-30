@@ -6,7 +6,7 @@
 
 
 <div class="vote-left col-lg-3 col-md-4 col-xs-6">
-  <span><%= @post.get_upvotes.size %> J'aime</span>TEST
+  <span><%= @post.get_upvotes.size %> J'aime</span>
   <%= link_to like_post_path(@post), method: :get do %>
     <span class="glyphicon glyphicon-thumbs-up hvr-bob"></span>
   <% end %>
